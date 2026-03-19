@@ -1,0 +1,363 @@
+[
+  {
+    "id": "jd_001",
+    "role_title": "Junior Fullstack Developer",
+    "min_education": "Bachelor's Degree",
+    "min_cgpa": 3.5,
+    "req_tech_stack": [
+      "React.js",
+      "Node.js",
+      "PostgreSQL",
+      "Docker",
+      "Git",
+      "AWS",
+      "TypeScript"
+    ],
+    "fallback_roadmap": [
+      {
+        "phase": "Phase 1: Backend Fundamentals",
+        "description": "Learn Node.js and Express to build robust RESTful APIs. Focus on middleware patterns and routing.",
+        "resources": [
+            {"name": "Node.js Official Guide", "url": "https://nodejs.org/en/docs/guides/"},
+            {"name": "MDN Express Web Framework Tutorial", "url": "https://developer.mozilla.org/en-US/docs/Learn/Server-side/Express_Nodejs"}
+        ]
+      },
+      {
+        "phase": "Phase 2: Database Mastery",
+        "description": "Master PostgreSQL, relational database design, and query optimization using modern ORMs.",
+        "resources": [
+            {"name": "PostgreSQL Official Tutorial", "url": "https://www.postgresqltutorial.com/"},
+            {"name": "Prisma ORM Quickstart", "url": "https://www.prisma.io/docs/getting-started"}
+        ]
+      },
+      {
+        "phase": "Phase 3: DevOps & Cloud",
+        "description": "Containerize applications with Docker and understand basic AWS deployment (EC2, S3).",
+        "resources": [
+            {"name": "Docker Getting Started Guide", "url": "https://docs.docker.com/get-started/"},
+            {"name": "AWS Free Tier Services", "url": "https://aws.amazon.com/free/"}
+        ]
+      }
+    ],
+    "fallback_questions": [
+      {
+        "topic": "Databases",
+        "question": "Explain the difference between Optimistic and Pessimistic Locking in the context of database transactions.",
+        "difficulty": "Medium",
+        "answer": "Optimistic locking checks if another process updated a record before committing a change, assuming conflicts are rare. Pessimistic locking locks the record as soon as it's read, preventing others from accessing it until the transaction completes."
+      },
+      {
+        "topic": "API Design",
+        "question": "What are the core principles of a RESTful API architecture?",
+        "difficulty": "Easy",
+        "answer": "REST relies on a client-server architecture, statelessness (each request contains all needed info), cacheability, a uniform interface (using standard HTTP methods like GET/POST), and a layered system."
+      },
+      {
+        "topic": "Runtime Environment",
+        "question": "How does the 'Event Loop' work in Node.js, and why is it significant for backend performance?",
+        "difficulty": "Hard",
+        "answer": "The Event Loop allows Node.js to perform non-blocking I/O operations despite being single-threaded. It offloads operations to the system kernel and executes callbacks when tasks complete, enabling high concurrency."
+      },
+      {
+        "topic": "Databases",
+        "question": "What is the purpose of an index in a SQL database, and what are the potential trade-offs of having too many indexes?",
+        "difficulty": "Medium",
+        "answer": "Indexes speed up data retrieval queries (SELECTs). However, too many indexes slow down data modification operations (INSERTs, UPDATEs) because the indexes must also be updated, and they consume additional disk space."
+      },
+      {
+        "topic": "Security",
+        "question": "Describe how JWT (JSON Web Tokens) are used for authentication and the security risks involved.",
+        "difficulty": "Medium",
+        "answer": "JWTs are stateless tokens sent by the server upon login, stored on the client, and attached to subsequent requests. Risks include token theft (if stored in local storage instead of HttpOnly cookies) and inability to invalidate tokens before they expire without a blacklist."
+      }
+    ]
+  },
+  {
+    "id": "jd_002",
+    "role_title": "Frontend Engineer",
+    "min_education": "Bachelor's Degree",
+    "min_cgpa": 3.0,
+    "req_tech_stack": [
+      "JavaScript",
+      "React.js",
+      "TypeScript",
+      "Redux",
+      "CSS/SASS",
+      "Jest"
+    ],
+    "fallback_roadmap": [
+      {
+        "phase": "Phase 1: Advanced JavaScript",
+        "description": "Deep dive into closures, promises, and the event loop mechanics.",
+        "resources": [
+            {"name": "MDN Web Docs: Closures", "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Closures"},
+            {"name": "JavaScript.info: The Event Loop", "url": "https://javascript.info/event-loop"}
+        ]
+      },
+      {
+        "phase": "Phase 2: State Management",
+        "description": "Master Redux toolkit and the React Context API for managing complex global state.",
+        "resources": [
+            {"name": "Redux Toolkit Quick Start", "url": "https://redux-toolkit.js.org/tutorials/quick-start"},
+            {"name": "React Docs: Passing Data with Context", "url": "https://react.dev/learn/passing-data-deeply-with-context"}
+        ]
+      },
+      {
+        "phase": "Phase 3: Automated Testing",
+        "description": "Implement robust unit and integration testing using Jest and React Testing Library.",
+        "resources": [
+            {"name": "Jest Getting Started Guide", "url": "https://jestjs.io/docs/getting-started"},
+            {"name": "React Testing Library Intro", "url": "https://testing-library.com/docs/react-testing-library/intro/"}
+        ]
+      }
+    ],
+    "fallback_questions": [
+      {
+        "topic": "JavaScript Core",
+        "question": "Explain event delegation and how it works in the DOM.",
+        "difficulty": "Medium",
+        "answer": "Event delegation is a pattern where a single event listener is added to a parent element to handle events from its children, leveraging event bubbling. It improves memory and performance."
+      },
+      {
+        "topic": "React",
+        "question": "What is the virtual DOM and how does React's reconciliation process work?",
+        "difficulty": "Hard",
+        "answer": "The virtual DOM is a lightweight JS representation of the actual DOM. Reconciliation is the process where React diffs the old virtual DOM with the new one, calculates the minimum changes, and updates the real DOM efficiently."
+      },
+      {
+        "topic": "State Management",
+        "question": "When would you choose the Context API over Redux for a project?",
+        "difficulty": "Medium",
+        "answer": "Context API is ideal for simple, low-frequency updates like theme or auth state. Redux is better for complex, high-frequency state changes where robust debugging tools (Redux DevTools) and middleware are needed."
+      },
+      {
+        "topic": "CSS",
+        "question": "Explain CSS specificity and how the cascade determines which styles are applied.",
+        "difficulty": "Easy",
+        "answer": "Specificity determines which CSS rule applies when multiple rules target the same element. It calculates weight based on IDs (highest), classes/attributes, and elements (lowest). Inline styles beat all."
+      },
+      {
+        "topic": "Testing",
+        "question": "What is the difference between shallow rendering and full DOM rendering in test environments?",
+        "difficulty": "Medium",
+        "answer": "Shallow rendering renders only the single component being tested without rendering its child components. Full DOM rendering mounts the entire component tree, simulating a real browser environment."
+      }
+    ]
+  },
+  {
+    "id": "jd_003",
+    "role_title": "Backend Python Developer",
+    "min_education": "Bachelor's Degree",
+    "min_cgpa": 3.2,
+    "req_tech_stack": [
+      "Python",
+      "FastAPI",
+      "PostgreSQL",
+      "Redis",
+      "Docker",
+      "Pytest"
+    ],
+    "fallback_roadmap": [
+      {
+        "phase": "Phase 1: Modern Python & FastAPI",
+        "description": "Master Python type hinting, Pydantic validation, and async programming using FastAPI.",
+        "resources": [
+            {"name": "FastAPI Official Tutorial", "url": "https://fastapi.tiangolo.com/tutorial/"},
+            {"name": "Real Python: Async IO in Python", "url": "https://realpython.com/async-io-python/"}
+        ]
+      },
+      {
+        "phase": "Phase 2: Database & Caching",
+        "description": "Integrate SQLAlchemy with PostgreSQL and implement caching layers using Redis.",
+        "resources": [
+            {"name": "SQLAlchemy ORM Tutorial", "url": "https://docs.sqlalchemy.org/en/20/tutorial/index.html"},
+            {"name": "Redis Official Quick Start", "url": "https://redis.io/docs/latest/develop/get-started/"}
+        ]
+      },
+      {
+        "phase": "Phase 3: Testing & Deployment",
+        "description": "Write comprehensive unit tests with Pytest and containerize the FastAPI app using Docker.",
+        "resources": [
+            {"name": "Pytest Documentation", "url": "https://docs.pytest.org/en/stable/"},
+            {"name": "Dockerizing FastAPI (Blog)", "url": "https://fastapi.tiangolo.com/deployment/docker/"}
+        ]
+      }
+    ],
+    "fallback_questions": [
+      {
+        "topic": "Python Core",
+        "question": "What is the Global Interpreter Lock (GIL) in Python, and how does it affect multithreading?",
+        "difficulty": "Hard",
+        "answer": "The GIL is a mutex that protects access to Python objects, preventing multiple native threads from executing Python bytecodes at once. It means multithreading cannot achieve true parallelism for CPU-bound tasks, though it still works well for I/O-bound tasks."
+      },
+      {
+        "topic": "Frameworks",
+        "question": "How does FastAPI achieve higher performance compared to traditional frameworks like Flask or Django?",
+        "difficulty": "Medium",
+        "answer": "FastAPI is built on Starlette (for web routing) and Pydantic (for data validation), and it natively supports asynchronous programming (async/await), allowing it to handle concurrent requests highly efficiently."
+      },
+      {
+        "topic": "Databases",
+        "question": "Explain the N+1 query problem and how to solve it in SQLAlchemy.",
+        "difficulty": "Medium",
+        "answer": "The N+1 problem occurs when an ORM executes 1 query to fetch a list of objects, and then N queries to fetch related child objects. It is solved in SQLAlchemy using eager loading techniques like 'joinedload' or 'selectinload'."
+      },
+      {
+        "topic": "Caching",
+        "question": "What are the common eviction policies in Redis when memory gets full?",
+        "difficulty": "Easy",
+        "answer": "Common policies include LRU (Least Recently Used), LFU (Least Frequently Used), random eviction, or 'noeviction' (which returns an error on new write operations)."
+      },
+      {
+        "topic": "Testing",
+        "question": "What are Pytest fixtures and how are they useful?",
+        "difficulty": "Medium",
+        "answer": "Fixtures are functions run by Pytest before (and sometimes after) the actual test functions. They are used to set up predictable base states, mock databases, or configure environments, promoting code reuse across test suites."
+      }
+    ]
+  },
+  {
+    "id": "jd_004",
+    "role_title": "Data Engineer",
+    "min_education": "Bachelor's Degree",
+    "min_cgpa": 3.0,
+    "req_tech_stack": [
+      "Python",
+      "SQL",
+      "Apache Spark",
+      "Airflow",
+      "AWS S3",
+      "Snowflake"
+    ],
+    "fallback_roadmap": [
+      {
+        "phase": "Phase 1: Advanced SQL & Warehousing",
+        "description": "Master window functions, CTEs, and Data Warehousing concepts (Star/Snowflake schemas) using Snowflake.",
+        "resources": [
+            {"name": "Mode Analytics Advanced SQL", "url": "https://mode.com/sql-tutorial/advanced-sql"},
+            {"name": "Snowflake Getting Started", "url": "https://docs.snowflake.com/en/user-guide-getting-started"}
+        ]
+      },
+      {
+        "phase": "Phase 2: Distributed Processing",
+        "description": "Learn Apache Spark architecture, RDDs vs DataFrames, and partition tuning for big data.",
+        "resources": [
+            {"name": "Databricks PySpark Guide", "url": "https://docs.databricks.com/getting-started/dataframes-python.html"},
+            {"name": "Apache Spark Documentation", "url": "https://spark.apache.org/docs/latest/sql-programming-guide.html"}
+        ]
+      },
+      {
+        "phase": "Phase 3: Pipeline Orchestration",
+        "description": "Build, schedule, and monitor robust ETL pipelines (DAGs) using Apache Airflow.",
+        "resources": [
+            {"name": "Airflow Official Concepts", "url": "https://airflow.apache.org/docs/apache-airflow/stable/core-concepts/dags.html"},
+            {"name": "Apache Airflow Fundamentals", "url": "https://airflow.apache.org/docs/apache-airflow/stable/tutorial/index.html"}
+        ]
+      }
+    ],
+    "fallback_questions": [
+      {
+        "topic": "Databases",
+        "question": "What is the difference between OLTP and OLAP systems?",
+        "difficulty": "Easy",
+        "answer": "OLTP (Online Transaction Processing) is optimized for fast, short, transactional updates (like a checkout system). OLAP (Online Analytical Processing) is optimized for complex, read-heavy queries over massive datasets for analytics (like a Data Warehouse)."
+      },
+      {
+        "topic": "Big Data",
+        "question": "Explain 'shuffling' in Apache Spark. Why is it expensive?",
+        "difficulty": "Hard",
+        "answer": "Shuffling is the process of redistributing data across different partitions (and often different nodes in a cluster) so it can be grouped differently (e.g., during groupByKey or join). It is expensive because it involves disk I/O, data serialization, and network transmission."
+      },
+      {
+        "topic": "Orchestration",
+        "question": "In Apache Airflow, what does it mean that a DAG must be idempotent?",
+        "difficulty": "Medium",
+        "answer": "Idempotency means that running the exact same DAG task multiple times with the same parameters produces the exact same result without causing duplication or unintended side effects, allowing safe retries on failure."
+      },
+      {
+        "topic": "SQL",
+        "question": "What is a Window Function in SQL? How does it differ from GROUP BY?",
+        "difficulty": "Medium",
+        "answer": "A window function performs a calculation across a set of table rows related to the current row, but unlike GROUP BY, it does not collapse the rows into a single output row; the original rows retain their individual identities."
+      },
+      {
+        "topic": "Cloud Storage",
+        "question": "When storing big data in AWS S3, why might you choose the Parquet format over JSON or CSV?",
+        "difficulty": "Medium",
+        "answer": "Parquet is a columnar storage format. It offers much higher compression ratios and allows querying engines (like Athena or Spark) to read only specific columns, vastly reducing I/O costs and speeding up analytical queries compared to row-based formats like CSV/JSON."
+      }
+    ]
+  },
+  {
+    "id": "jd_005",
+    "role_title": "DevOps Engineer",
+    "min_education": "Bachelor's Degree",
+    "min_cgpa": 3.0,
+    "req_tech_stack": [
+      "Linux",
+      "Bash",
+      "Docker",
+      "Kubernetes",
+      "Terraform",
+      "GitHub Actions"
+    ],
+    "fallback_roadmap": [
+      {
+        "phase": "Phase 1: OS & Containerization",
+        "description": "Deepen Linux administration skills, bash scripting, and building multi-stage Dockerfiles.",
+        "resources": [
+            {"name": "Ubuntu Command Line for Beginners", "url": "https://ubuntu.com/tutorials/command-line-for-beginners"},
+            {"name": "Docker Best Practices", "url": "https://docs.docker.com/develop/develop-images/dockerfile_best-practices/"}
+        ]
+      },
+      {
+        "phase": "Phase 2: Infrastructure as Code (IaC)",
+        "description": "Learn to provision cloud infrastructure declaratively using Terraform and manage state files securely.",
+        "resources": [
+            {"name": "HashiCorp Terraform Tutorials", "url": "https://developer.hashicorp.com/terraform/tutorials"},
+            {"name": "Terraform Official Documentation", "url": "https://developer.hashicorp.com/terraform/docs"}
+        ]
+      },
+      {
+        "phase": "Phase 3: Orchestration & CI/CD",
+        "description": "Master Kubernetes architecture (Pods, Deployments, Services) and automate deployments via GitHub Actions.",
+        "resources": [
+            {"name": "Kubernetes Basics Tutorial", "url": "https://kubernetes.io/docs/tutorials/kubernetes-basics/"},
+            {"name": "GitHub Actions Documentation", "url": "https://docs.github.com/en/actions"}
+        ]
+      }
+    ],
+    "fallback_questions": [
+      {
+        "topic": "Containerization",
+        "question": "What is the architectural difference between a Docker container and a Virtual Machine?",
+        "difficulty": "Easy",
+        "answer": "A Virtual Machine packages a full guest operating system along with the app, running on a hypervisor. A Docker container is lighter weight; it shares the host system's OS kernel and only packages the app and its exact dependencies."
+      },
+      {
+        "topic": "Infrastructure as Code",
+        "question": "What is the Terraform State file (`terraform.tfstate`), and why is it critical to manage it securely?",
+        "difficulty": "Medium",
+        "answer": "The state file maps the real-world infrastructure to your configuration code. It is critical to store it securely (e.g., in an encrypted S3 bucket) because it can contain plain-text secrets (like database passwords) and is required for Terraform to know what to update or destroy."
+      },
+      {
+        "topic": "Kubernetes",
+        "question": "Explain the difference between a Kubernetes Pod and a Deployment.",
+        "difficulty": "Medium",
+        "answer": "A Pod is the smallest deployable unit in K8s, representing a single instance of a running process (usually one container). A Deployment is a higher-level controller that manages the declarative creation, scaling, and rolling updates of a set of identical Pods."
+      },
+      {
+        "topic": "Linux",
+        "question": "What happens when a Linux process becomes a 'Zombie' process?",
+        "difficulty": "Medium",
+        "answer": "A zombie process is a process that has completed execution but still has an entry in the process table. This happens because its parent process hasn't yet read its exit status (using the `wait()` system call). They consume process IDs but not CPU."
+      },
+      {
+        "topic": "CI/CD",
+        "question": "Explain the concept of 'Blue/Green Deployment'.",
+        "difficulty": "Hard",
+        "answer": "Blue/Green deployment is a strategy where you maintain two identical production environments. The 'Blue' environment runs the current live version. The 'Green' environment is updated with the new code. Once tested, traffic is routed from Blue to Green, allowing for zero-downtime deployments and instant rollbacks."
+      }
+    ]
+  }
+]

@@ -1,0 +1,29 @@
+[
+  {
+    "id": "res_001",
+    "full_name": "Alex Thompson",
+    "education_level": "B.S. Computer Science",
+    "cgpa": 3.45,
+    "tech_stack": [
+      "JavaScript",
+      "React",
+      "HTML/CSS",
+      "Git",
+      "Java"
+    ]
+  },
+  {
+    "id": "res_002",
+    "full_name": "Priya Sharma",
+    "education_level": "B.Tech Information Technology",
+    "cgpa": 3.80,
+    "tech_stack": [
+      "Python",
+      "FastAPI",
+      "PostgreSQL",
+      "Git",
+      "Docker",
+      "C++"
+    ]
+  }
+]
