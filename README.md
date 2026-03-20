@@ -58,7 +58,7 @@ I verified all AI-generated code by actively testing the API endpoints via Swagg
 
 **Examples of suggestions I rejected or changed:**
 I actively overruled several architectural suggestions to better fit a production-grade environment:
-1. **LLM & Tooling Choice:** I opted to use Google's Gemini 1.5 Flash via LangChain instead of a basic OpenAI SDK implementation to leverage faster structured JSON outputs and robust fallback mechanisms.
+1. **LLM & Tooling Choice:** I opted to use Google's Gemini 2.5 Flash via LangChain instead of a basic OpenAI SDK implementation to leverage faster structured JSON outputs and robust fallback mechanisms.
 2. **Modularization (`main.py` and `App.jsx`):** The AI initially suggested monolithic files. I manually refactored `App.jsx` to act strictly as a state router, pushing local state, API calls, and Zod validation down to individual, highly modular View components.
 3. **Error & Loading States:** I rejected the suggestion to use generic global error banners. Instead, I implemented *local* error handling (for precise form validation feedback) paired with a *global* full-screen loading overlay. This protects the state machine and prevents user interaction during high-latency LLM network requests.
 
@@ -78,5 +78,5 @@ I actively overruled several architectural suggestions to better fit a productio
 
 **Known Limitations:**
 * **LLM Hallucinations:** While heavily mitigated by strict Pydantic Output Parsers in LangChain, the Gemini API could theoretically still hallucinate non-existent learning resources or invalid URLs.
-* **API Rate Limiting:** The application relies on the free tier of the Gemini API. Rapid, successive gap-analysis requests may trigger a `429 Too Many Requests` error (though the application will elegantly catch this and render the offline/fallback curriculum data).
+* **API Rate Limiting:** The application relies on the free tier of the Gemini API. Rapid, successive gap-analysis or roadmap or mock-interview requests may trigger a `429 Too Many Requests` error (though the application will elegantly catch this and render the offline/fallback curriculum data).
 * **Ephemeral State:** Because there is no database, refreshing the browser page clears the entire React state, forcing the user to restart from Step 1.
