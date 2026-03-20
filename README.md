@@ -80,5 +80,3 @@ I actively overruled several architectural suggestions to better fit a productio
 * **LLM Hallucinations:** While heavily mitigated by strict Pydantic Output Parsers in LangChain, the Gemini API could theoretically still hallucinate non-existent learning resources or invalid URLs.
 * **API Rate Limiting:** The application relies on the free tier of the Gemini API. Rapid, successive gap-analysis requests may trigger a `429 Too Many Requests` error (though the application will elegantly catch this and render the offline/fallback curriculum data).
 * **Ephemeral State:** Because there is no database, refreshing the browser page clears the entire React state, forcing the user to restart from Step 1.
-```
-
