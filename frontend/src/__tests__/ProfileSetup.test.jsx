@@ -26,7 +26,7 @@ describe('ProfileSetup Component (Zod Validation)', () => {
         
         // Wait for the mocked API call to finish so the component is fully rendered
         await waitFor(() => {
-            expect(screen.getByText(/1. Your Profile/i)).toBeInTheDocument();
+            expect(screen.getByText(/Your Profile/i)).toBeInTheDocument();
         });
 
         // Find the "Next Step" button and click it immediately (leaving the form completely blank)
