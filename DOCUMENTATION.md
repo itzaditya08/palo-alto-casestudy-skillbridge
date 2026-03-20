@@ -30,6 +30,66 @@ The application follows a decoupled client-server architecture.
 4. **Response Handling:** The validated JSON is sent back to the client, parsed by Zod, and rendered in the UI.
 
 ---
+```mermaid
+sequenceDiagram
+    autonumber
+    participant U as User (Browser)
+    participant F as React Frontend (Zod)
+    participant B as FastAPI Backend (Pydantic)
+    participant G as Google Gemini 2.5 API
+    participant DB as Local JSON Store (Synthetic/Fallback)
+
+    Note over U, F: Phase 1: Ingestion & Gap Analysis
+    U->>F: Triggers "Analyze Profile"
+    F->>DB: Fetch Synthetic User Profile
+    DB-->>F: Return Profile Data
+    F->>F: Validate Inputs (Zod Schema)
+    F->>B: POST /api/analyze (Resume + Role)
+    B->>B: Construct Analysis Prompt
+    
+    alt Gemini API Active
+        B->>G: Request Structured Analysis (Gemini 2.5)
+        G-->>B: Return JSON (Matches/Gaps)
+    else API Failure
+        B->>DB: Fetch Standard Role Mapping
+        DB-->>B: Return Static JSON
+    end
+    B-->>F: Validated JSON Response
+    F-->>U: Render Gap Analysis Dashboard
+
+    Note over U, F: Phase 2: Sequential Roadmap Generation
+    U->>F: Clicks "Generate My Roadmap"
+    F->>B: POST /api/roadmap (Identified Gaps)
+    B->>B: Construct Roadmap Prompt
+    
+    alt Gemini API Active
+        B->>G: Request 3-Phase Curriculum (Gemini 2.5)
+        G-->>B: Return JSON (Resources + Timeline)
+    else API Failure
+        B->>DB: Fetch "Standard Path" for Gaps
+        DB-->>B: Return Static Roadmap
+    end
+    B-->>F: Validated JSON Response
+    F-->>U: Render Interactive Roadmap
+
+    Note over U, F: Phase 3: Targeted Interview Prep
+    U->>F: Clicks "Start Mock Interview"
+    F->>B: POST /api/interview (Gaps + Context)
+    B->>B: Construct Interview Prompt
+    
+    alt Gemini API Active
+        B->>G: Request Technical Flashcards (Gemini 2.5)
+        G-->>B: Return JSON (Question/Answer Pairs)
+    else API Failure
+        B->>DB: Fetch Core Competency Questions
+        DB-->>B: Return Static Flashcards
+    end
+    B-->>F: Validated JSON Response
+    F-->>U: Render Flashcard Interface
+    
+    Note over U, F: Final State: All components validated by Zod
+```
+---
 
 ## 4. API Specification
 
