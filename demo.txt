@@ -11,5 +11,5 @@ npm run dev
 (Open a new terminal tab in the frontend folder)
 npm run test
 
-4. TO TRIGGER THE FALLBACK (The "Senior Flex"):
+4. TO TRIGGER THE FALLBACK:
 GOOGLE_API_KEY="broken_key_123" uvicorn main:app --reload
